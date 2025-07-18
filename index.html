@@ -20,6 +20,10 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Gelica', serif;
         }
+        .font-gelica-semibold {
+            font-family: 'Gelica', sans-serif;
+            font-weight: 600; /* Corresponds to semibold */
+        }
         .font-sofia {
             font-family: 'Sofia Pro', sans-serif;
         }
@@ -44,12 +48,12 @@
             opacity: 1;
         }
         .hero-bg {
-            background-image: url('https://toastique.com/cdn/shop/files/homepage_hero.jpg?v=1741407899&width=3000');
+            background-image: url('https://sauconsource.com/wp-content/uploads/2025/01/20230301_193735-scaled-1.jpg');
             background-size: cover;
             background-position: center;
         }
         .parallax-bg {
-             background-image: url('https://sauconsource.com/wp-content/uploads/2025/01/20230301_193735-scaled-1.jpg');
+             background-image: url('https://toastique.com/cdn/shop/files/homepage_hero.jpg?v=1741407899&width=3000');
              background-attachment: fixed;
              background-position: center;
              background-repeat: no-repeat;
@@ -62,27 +66,40 @@
              background-repeat: no-repeat;
              background-size: cover;
         }
+        
+        /* Sticky Header Styling */
+        #main-header {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #main-header.header-visible {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-toastique-blue/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+    <header id="main-header" class="bg-toastique-blue/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <img src="https://toastique.com/cdn/shop/files/toastique_horiz_gold-web.svg?v=1738602787&width=190" alt="Toastique Logo" class="h-10">
+            <img src="https://i.imgur.com/eb3EAQO.png" alt="Toastique Logo" class="h-8">
             <div class="flex items-center space-x-4">
-                <span class="text-white text-sm font-bold hidden sm:inline">+</span>
-                <img src="https://www.andersoncollaborative.com/wp-content/uploads/2024/02/logo-horizontal-green-white.svg" alt="Anderson Collaborative Logo" class="h-12">
+                 <img src="https://i.imgur.com/2E5vzi4.png" alt="Anderson Collaborative Logo" class="h-10">
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white min-h-[60vh] md:min-h-[80vh] flex items-center justify-center relative">
-        <div class="absolute inset-0 bg-black/50"></div>
+    <section class="hero-bg text-white min-h-[70vh] md:min-h-[80vh] flex flex-col items-center justify-center relative">
+        <div class="absolute inset-0 bg-black/60"></div>
         <div class="container mx-auto px-6 text-center z-10">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 reveal">Toastique Addison: Our Blueprint for Success</h1>
-            <p class="text-lg md:text-2xl text-toastique-wheat max-w-3xl mx-auto reveal font-sofia">The art of gourmet toast meets the science of franchise growth. A strategic partnership to launch, lead, and conquer the Addison market.</p>
+            <div class="flex justify-center items-center gap-4 md:gap-8 mb-6 reveal">
+                <img src="https://i.imgur.com/2E5vzi4.png" alt="Anderson Collaborative Logo" class="h-16 md:h-20">
+                <span class="text-2xl md:text-4xl font-light">+</span>
+                <img src="https://i.imgur.com/eb3EAQO.png" alt="Toastique Logo" class="h-12 md:h-16">
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-gelica-semibold mb-4 reveal">A Marketing Partnership Built for Franchise Growth</h1>
+            <h2 class="text-xl md:text-2xl text-toastique-wheat max-w-3xl mx-auto reveal font-sofia uppercase tracking-widest">Anderson Collaborative & Toastique's Partnership</h2>
         </div>
     </section>
 
@@ -91,8 +108,7 @@
 
             <!-- The Partnership Section -->
             <section class="text-center reveal">
-                <h2 class="text-4xl font-bold text-toastique-blue mb-4">A Partnership Built for Growth</h2>
-                <p class="max-w-4xl mx-auto text-lg">
+                 <p class="max-w-4xl mx-auto text-lg">
                     Through our partnership with Anderson Collaborative, Toastique franchisees gain access to powerful in-house marketing support—from paid ads and SEO to content creation and local campaigns. It's a full-service, next-gen strategy, tailored to drive results from day one.
                 </p>
             </section>
@@ -102,9 +118,10 @@
                 <div class="grid md:grid-cols-3 gap-8 items-center">
                     <div class="md:col-span-2">
                         <h3 class="text-3xl font-bold text-toastique-gold mb-3">Our Mission: Launch a Flagship</h3>
-                        <p class="text-lg mb-4">Execute a robust pre-opening campaign for Toastique Addison to drive RSVPs, media buzz, influencer engagement, and build a foundation for long-term customer acquisition in a flagship Texas market.</p>
+                        <p class="text-lg mb-4">Execute a robust pre-opening campaign for Toastique Addison to drive RSVPs, media buzz, and influencer engagement, building a foundation for long-term customer acquisition for our Labor Day launch.</p>
                         <div class="flex flex-wrap gap-4 font-sofia">
                             <div class="bg-toastique-blue text-white py-2 px-4 rounded-full text-sm font-bold">Location: Addison, TX</div>
+                             <div class="bg-toastique-green text-white py-2 px-4 rounded-full text-sm font-bold">Launch Date: September 1st (Labor Day)</div>
                             <div class="bg-toastique-gold text-white py-2 px-4 rounded-full text-sm font-bold">Budget: $20,000</div>
                         </div>
                     </div>
@@ -117,34 +134,78 @@
             <!-- Parallax Divider -->
             <div class="h-64 md:h-96 parallax-bg rounded-lg shadow-xl reveal"></div>
 
-            <!-- Launch Timeline -->
+            <!-- Launch Roadmap -->
             <section class="reveal">
-                <h2 class="text-4xl font-bold text-center text-toastique-blue mb-12">The 4-Week Pre-Launch Countdown</h2>
-                <div class="relative border-l-4 border-toastique-gold ml-6 md:ml-0 md:border-l-0 md:border-t-4 md:flex">
-                    <!-- Weeks 1-2 -->
-                    <div class="mb-16 md:mb-0 md:w-1/2">
-                        <div class="absolute -left-4 top-0 md:top-auto md:-top-4 md:left-1/4 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white"></div>
-                        <div class="ml-12 md:ml-0 md:mr-12 md:text-right">
-                            <h4 class="text-2xl font-bold text-toastique-gold">Weeks 1-2: Foundation & Buzz</h4>
-                            <p class="mt-2 text-lg">Laying the groundwork and generating initial excitement.</p>
-                            <ul class="mt-4 space-y-2 text-left md:text-right font-sofia">
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Meta Ads:</strong> Geo-targeted campaigns for Addison's health-conscious foodies.</li>
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Influencer Campaign:</strong> Partnering with 15-20 local micro/mid-tier influencers.</li>
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Local PR:</strong> Distributing a custom press release to Addison & North Dallas media.</li>
-                            </ul>
+                <h2 class="text-4xl font-bold text-center text-toastique-blue mb-12">Roadmap to Grand Opening</h2>
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 h-full w-1 bg-toastique-gold rounded"></div>
+                    
+                    <!-- Week 4 (Aug 4 - Aug 10) -->
+                    <div class="relative flex md:justify-between items-start w-full mb-12">
+                        <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white p-4 rounded-lg shadow-lg ml-10 md:ml-0">
+                                <p class="text-toastique-gold font-bold text-lg">4 Weeks Out: Aug 4 - 10</p>
+                                <h4 class="text-xl font-bold my-1">Foundation & Buzz</h4>
+                                <ul class="text-sm list-disc list-inside text-left font-sofia">
+                                    <li>Launch initial geo-targeted Meta Ads.</li>
+                                    <li>Finalize influencer partnerships (15-20 creators).</li>
+                                    <li>Distribute press release to local media.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white flex items-center justify-center font-bold text-white">4</div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Week 3 (Aug 11 - Aug 17) -->
+                    <div class="relative flex md:justify-between items-start w-full mb-12">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white flex items-center justify-center font-bold text-white">3</div>
+                        <div class="w-full md:w-1/2 md:pl-8 text-left">
+                             <div class="bg-white p-4 rounded-lg shadow-lg ml-10 md:ml-0">
+                                <p class="text-toastique-gold font-bold text-lg">3 Weeks Out: Aug 11 - 17</p>
+                                <h4 class="text-xl font-bold my-1">Content & Hype</h4>
+                                <ul class="text-sm list-disc list-inside text-left font-sofia">
+                                    <li>On-site professional content & video shoot.</li>
+                                    <li>Influencer pre-opening walkthroughs & content capture.</li>
+                                    <li>Begin countdown/hype content on social media.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- Weeks 3-4 -->
-                    <div class="md:w-1/2">
-                        <div class="absolute -left-4 top-1/2 md:top-auto md:-top-4 md:left-3/4 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white"></div>
-                        <div class="ml-12 md:ml-12">
-                            <h4 class="text-2xl font-bold text-toastique-gold">Weeks 3-4: Expansion & Momentum</h4>
-                            <p class="mt-2 text-lg">Scaling our efforts to maximize reach and drive reservations.</p>
-                             <ul class="mt-4 space-y-2 text-left font-sofia">
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Tier 3 Ad Campaigns:</strong> Full-funnel paid media across Meta, Google, TikTok, YouTube & CTV.</li>
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Content & Video Shoot:</strong> Creating lifestyle, product, and UGC-style content onsite.</li>
-                                <li class="bg-white p-3 rounded-md shadow"><strong>Post-Launch Ads:</strong> Retargeting and lookalike audiences to maintain foot traffic.</li>
-                            </ul>
+
+                    <!-- Week 2 (Aug 18 - Aug 24) -->
+                     <div class="relative flex md:justify-between items-start w-full mb-12">
+                        <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white p-4 rounded-lg shadow-lg ml-10 md:ml-0">
+                                <p class="text-toastique-gold font-bold text-lg">2 Weeks Out: Aug 18 - 24</p>
+                                <h4 class="text-xl font-bold my-1">Full-Funnel Expansion</h4>
+                                <ul class="text-sm list-disc list-inside text-left font-sofia">
+                                    <li>Launch Tier 3 ad campaigns (Google, TikTok, CTV).</li>
+                                    <li>Push for Grand Opening RSVP acquisition.</li>
+                                    <li>Local SEO optimization & review system setup.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white flex items-center justify-center font-bold text-white">2</div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Week 1 (Aug 25 - Aug 31) -->
+                    <div class="relative flex md:justify-between items-start w-full">
+                         <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-10 w-8 h-8 bg-toastique-gold rounded-full border-4 border-white flex items-center justify-center font-bold text-white">1</div>
+                        <div class="w-full md:w-1/2 md:pl-8 text-left">
+                             <div class="bg-white p-4 rounded-lg shadow-lg ml-10 md:ml-0">
+                                <p class="text-toastique-gold font-bold text-lg">Launch Week: Aug 25 - 31</p>
+                                <h4 class="text-xl font-bold my-1">Final Push</h4>
+                                <ul class="text-sm list-disc list-inside text-left font-sofia">
+                                    <li>Intensify ad spend for maximum reach.</li>
+                                    <li>Final media and influencer reminders.</li>
+                                    <li>Prepare for post-launch retargeting campaigns.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,13 +276,23 @@
             <p class="font-bold text-lg">Welcome to the Toastique Family.</p>
             <p class="font-sofia">Let's Grow Together in Addison.</p>
             <div class="flex justify-center items-center space-x-6 mt-6">
-                 <img src="https://toastique.com/cdn/shop/files/toastique_horiz_gold-web.svg?v=1738602787&width=190" alt="Toastique Logo" class="h-8 opacity-70">
-                 <img src="https://www.andersoncollaborative.com/wp-content/uploads/2024/02/logo-horizontal-green-white.svg" alt="Anderson Collaborative Logo" class="h-10 opacity-70">
+                 <img src="https://i.imgur.com/eb3EAQO.png" alt="Toastique Logo" class="h-8 opacity-70">
+                 <img src="https://i.imgur.com/2E5vzi4.png" alt="Anderson Collaborative Logo" class="h-10 opacity-70">
             </div>
         </div>
     </footer>
 
     <script>
+        // Sticky Header Logic
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) { // Show header after scrolling 100px
+                header.classList.add('header-visible');
+            } else {
+                header.classList.remove('header-visible');
+            }
+        });
+
         // Chart.js for Budget Allocation
         const ctx = document.getElementById('budgetChart').getContext('2d');
         const budgetChart = new Chart(ctx, {
